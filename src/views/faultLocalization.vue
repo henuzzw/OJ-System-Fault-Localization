@@ -8,15 +8,19 @@
     </div>
     <div class="main">
       <locate-method></locate-method>
+      <code-view></code-view>
+      <comments></comments>
     </div>
   </div>
 </template>
 
 <script>
 import locateMethod from "../components/locateMethod";
+import codeView from "../components/codeView";
+import comments from "../components/comments";
 export default {
   name: "faultLocalization",
-  components:{locateMethod,}
+  components:{locateMethod,codeView,comments}
 }
 </script>
 
@@ -33,7 +37,9 @@ export default {
 
 .faultLocallization {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   .myTop {
     position: relative;
     height: min-content;
@@ -64,9 +70,13 @@ export default {
     }
   }
   .main{
-    height: calc(100% - 150px);
+    //height: max-content;
     width: 100%;
-    background-color: white;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    //background-color: white;
+    display: flex;
   }
 }
 </style>
