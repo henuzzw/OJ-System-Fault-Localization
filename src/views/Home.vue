@@ -1,18 +1,43 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img src="../assets/stat.png" @click="butclic" alt="My Image">
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+// import  './src/assets/stat.png' as pic
+import axios from 'axios';
+import {ElButton} from 'element-plus';
+import {reactive} from "vue";
+import 'element-plus/dist/index.css'
+import {useRoute,useRouter} from 'vue-router'
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    ElButton
+  },
+  setup(){
+    const router = useRouter();
+    let butclic=reactive(()=>{
+      router.push("/faultLocalization");
+    })
+    let butclic2=reactive(()=>{
+      console.log("test44")
+    })
+    return{
+      butclic,
+      butclic2
+    }
   }
 }
 </script>
+<style lang="scss">
+.home{
+  width: 100vw;
+  height: 100vh;
+
+}
+
+
+</style>
