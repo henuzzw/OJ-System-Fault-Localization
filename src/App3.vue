@@ -1,7 +1,6 @@
 <template>
-  <div class="codemirrorDemo">
-
-        <codemirror
+  <div class="App">
+    <codemirror
         v-model="code"
         placeholder="Code goes here..."
         :style="{ height: '400px' }"
@@ -18,15 +17,17 @@
 </template>
 
 <script>
-import {defineComponent, ref, shallowRef} from 'vue'
+import {defineComponent, ref,shallowRef} from 'vue'
 import {Codemirror} from 'vue-codemirror'
 import {javascript} from '@codemirror/lang-javascript'
 import {oneDark} from '@codemirror/theme-one-dark'
+// @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'codemirrorDemo',
+  name: 'App',
   components: {
-     Codemirror
+    HelloWorld, Codemirror
   },
   setup() {
     const code = ref(`console.log('Hello, world!')`)
@@ -59,18 +60,3 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-.codemirrorDemo{
-  height: 100%;
-  width: 100%;
-  background-color: #28233F;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  .ͼo{
-    width: 58vw;
-    height: 90%;
-    background-color: #24292F;
-  }
-}
-</style>
