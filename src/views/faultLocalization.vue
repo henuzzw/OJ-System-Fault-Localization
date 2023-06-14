@@ -14,6 +14,8 @@
   </div>
 </template>
 
+
+
 <script>
 import locateMethod from "../components/locateMethod";
 import codeView from "../components/codeView";
@@ -75,7 +77,7 @@ export default {
     display: flex;
     flex-grow: 1;
     flex-direction: row;
-    //background-color: white;
+    background-color: #555671;
     display: flex;
   }
 }

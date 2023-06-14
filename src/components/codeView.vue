@@ -2,10 +2,7 @@
   <div class="codeView">
     <codemirror-demo></codemirror-demo>
 
-    <div class="confirmButton">
-      <el-button type="primary">错误定位</el-button>
-      <el-button type="Info">提交代码</el-button>
-    </div>
+
   </div>
 </template>
 
@@ -25,16 +22,12 @@ export default {
 
 <style scoped lang="scss">
 .codeView {
-  margin: 0 10px;
-  width: 60%;
-  position: relative;
+  margin: 0 1px;
+  width: 64%;
+
   display: flex;
 
   background-color: aliceblue;
-  .confirmButton{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
+
 }
 </style>

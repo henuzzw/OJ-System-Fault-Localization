@@ -29,7 +29,45 @@ export default {
      Codemirror
   },
   setup() {
-    const code = ref(`console.log('Hello, world!')`)
+    const code = ref(`import {defineComponent, ref, shallowRef} from 'vue'
+import {Codemirror} from 'vue-codemirror'
+import {javascript} from '@codemirror/lang-javascript'
+import {oneDark} from '@codemirror/theme-one-dark'
+
+export default {
+  name: 'codemirrorDemo',
+  components: {
+     Codemirror
+  },
+  setup() {
+    const code = ref(\`console.log('Hello, world!')\`)
+    const extensions = [javascript(), oneDark]
+
+    // Codemirror EditorView instance ref
+    const view = shallowRef()
+    const handleReady = (payload) => {
+      view.value = payload.view
+    }
+
+    // Status is available at all times via Codemirror EditorView
+    const getCodemirrorStates = () => {
+      const state = view.value.state
+      const ranges = state.selection.ranges
+      const selected = ranges.reduce((r, range) => r + range.to - range.from, 0)
+      const cursor = ranges[0].anchor
+      const length = state.doc.length
+      const lines = state.doc.lines
+      // more state info ...
+      // return ...
+    }
+
+    return {
+      code,
+      extensions,
+      handleReady,
+      log: console.log
+    }
+  }`)
     const extensions = [javascript(), oneDark]
 
     // Codemirror EditorView instance ref
@@ -67,6 +105,7 @@ export default {
   display: grid;
   justify-content: center;
   align-items: center;
+  text-align: left;
   .ͼo{
     width: 58vw;
     height: 90%;
