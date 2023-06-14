@@ -8,9 +8,7 @@
       :default-expanded-keys="['SBFL']"
       :default-checked-keys="['SBFL-Tarantula']"
   />
-  <div class="confirmButton">
-    <el-button type="primary">确认</el-button>
-  </div>
+
 <!--  <el-checkbox-group :max="1" :min="1" v-model="checkedMethods">-->
 <!--    <el-checkbox v-for="method in methodsList" :label="method" :key="method"-->
 <!--                 style="display: block; padding-top: 10px;margin-left:10px"> {{method}}<br>-->
@@ -92,10 +90,7 @@ export default {
   width: 14%;
   background-color: lightcyan;
   text-align: left;
-  .confirmButton{
-    margin-top: 4px;
-    margin-left: 180px;
-  }
+
 
 }
 </style>

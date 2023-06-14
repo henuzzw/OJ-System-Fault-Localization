@@ -44,7 +44,7 @@ export default {
   background-color: aliceblue;
   .confirmButton{
     position: absolute;
-    bottom: 20px;
+    top: 20px;
     right: 20px;
   }
 }
