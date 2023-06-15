@@ -12,6 +12,9 @@
   height: 100%;
   background-color: #28233F;
 }
+
+
+
 body, html {
   margin: 0;
   padding: 0;
